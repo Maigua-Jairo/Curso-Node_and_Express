@@ -6,13 +6,19 @@ const fccTesting = require('./freeCodeCamp/fcctesting.js');
 
 const app = express();
 
-fccTesting(app); //For FCC testing purposes
+fccTesting(app); 
+// 1. MIDDLEWARES
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.route('/').get((req, res) => {
+// 2. CONFIGURACIÓN DE PUG 
+app.set('view engine', 'pug');
+app.set('views', './views/pug'); /
 
+// 3. RUTAS
+app.route('/').get((req, res) => {
+  res.render('index'); 
 });
 
 const PORT = process.env.PORT || 3000;
