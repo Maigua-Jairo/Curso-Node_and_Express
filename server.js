@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // 2. CONFIGURACIÓN DE PUG 
 app.set('view engine', 'pug');
-app.set('views', './views/pug'); /
+app.set('views', './views/pug'); 
 
 // 3. RUTAS
 app.route('/').get((req, res) => {
